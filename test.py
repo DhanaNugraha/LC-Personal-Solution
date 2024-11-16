@@ -1,2 +1,2 @@
-nums = [1,2,3]
-print(len(nums))
+passed = {'a':2}
+print(passed['a'])

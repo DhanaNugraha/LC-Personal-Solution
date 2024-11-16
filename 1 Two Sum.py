@@ -12,27 +12,13 @@ target = 9
 
 
 def twoSum(nums, target):
-    passed = set()
+    passed = {}
 
-    for i in range(len(nums)):
-        if nums[i] in passed:
-            continue
+    for i, num in enumerate(nums):
+        diff = target - num
+        if diff in passed:
+            return [passed[diff], i]
         else:
-            counter = i+1
-            while counter != len(nums):
-                if nums[counter] in passed:
-                    counter += 1 
-                    print('here 1')
-                else:
-                    total = nums[i] + nums[counter]
-                    print('this is total ', total)
-                    if total == target:
-                        print('here 3')
-                        return [i, counter]
-                    else:
-                        counter += 1     
-                        print('here 4')          
-        passed.add(nums[i])
-        print('here 5')
+            passed[num] = i
 
 print(twoSum(nums, target))
