@@ -1,49 +1,13 @@
 nums = [1,2,3,1]
 
 def containsDuplicate(nums):
-    oneDigit = set()
-    twoDigit = set()
-    threeDigit = set()
-    fourDigit = set()
-    fiveDigit = set()
-
+    passed = set()
 
     for i in nums:
-        if len(str(i)) == 1:
-            if i in oneDigit:
-                # print('this is if i ', checker)
-                return True
-            else:
-                oneDigit.add(i)
-                # print('this is else i ', checker)
-        elif len(str(i)) == 2:
-            if i in twoDigit:
-                # print('this is if i ', checker)
-                return True
-            else:
-                twoDigit.add(i)
-                # print('this is else i ', checker)
-        elif len(str(i)) == 3:
-            if i in threeDigit:
-                # print('this is if i ', checker)
-                return True
-            else:
-                threeDigit.add(i)
-                # print('this is else i ', checker)
-        elif len(str(i)) == 4:
-            if i in fourDigit:
-                # print('this is if i ', checker)
-                return True
-            else:
-                fourDigit.add(i)
-                # print('this is else i ', checker)
+        if i in passed:
+            return True
         else:
-            if i in fiveDigit:
-                # print('this is if i ', checker)
-                return True
-            else:
-                fiveDigit.add(i)
-                # print('this is else i ', checker)
+            passed.add(i)
     return False
 
 print(containsDuplicate(nums))
