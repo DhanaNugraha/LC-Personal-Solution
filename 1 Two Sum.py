@@ -12,10 +12,15 @@ target = 9
 
 
 def twoSum(nums, target):
+    #Uses dict 
     passed = {}
 
+    # enumerate to use both as key and value in dict
     for i, num in enumerate(nums):
+        # rephrase q a+b=c == a = c-b
         diff = target - num
+
+        # we wanna check small in the start, so just check the numbers with stuff we passed, not to the right of the given list.
         if diff in passed:
             return [passed[diff], i]
         else:

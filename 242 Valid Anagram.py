@@ -4,8 +4,11 @@
 s = 'hello'
 t = 'hello'
 
+# tldr, we count how many ocurrences per letter on each given string
+
 def isAnagram(s, t):
 
+    # using dict to count number of appearance of letter in string s
     compareOne = {}
     for i in s:
         if i in compareOne:
@@ -14,6 +17,7 @@ def isAnagram(s, t):
             compareOne[i] = 1
 
 
+    # using dict to count number of appearance of letter in string t
     compareTwo = {}
     for i in t:
         if i in compareTwo:
