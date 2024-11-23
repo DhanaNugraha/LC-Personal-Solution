@@ -1,34 +1,11 @@
-passed = {'a':2, 'b':3, 'c':1}
-# print(max(passed))
-# print(passed.pop(max(passed)))
-# print(passed)
-
-# print(list(passed.values()))
-
-# print(passed.item(1))
-# keys = list(passed.keys())
-# values = list(passed.values())
-
-# maxIndex = values.index(max(values))
-# maxKey = keys[maxIndex]
-
-# print(maxIndex)
-# print(maxKey)
+test = [1,3,5,7,9]
+print(test[4-2])
 
 
+for i in reversed(range(0, len(test))):
+    print(test[i])
+# print(len(test))
 
-
-# print(enumerate(a))
-
-# for i, val in enumerate(a):
+# for i in range(1, 2):
+#     print(test[i])
     
-# print(max(a))
-# print(max(i, val in enumerate(a)))
-a = [1, 2, 3]
-
-list = []
-
-list.append(a[0])
-
-print(list)
-
