@@ -1,11 +1,15 @@
-test = [1,3,5,7,9]
-print(test[4-2])
+test = {1: set(), 2:set()}
+
+test[1].add(1)
+print(test)
+
+if 1 in test[1]:
+    print('works')
+else:
+    print('broken')
 
 
-for i in reversed(range(0, len(test))):
-    print(test[i])
-# print(len(test))
-
-# for i in range(1, 2):
-#     print(test[i])
-    
+if 1 in test[1]:
+    print('works')
+else:
+    print('broken')
