@@ -6,26 +6,26 @@ temperatures = [73,74,75,71,69,72,76,73]
 # if higher append i-i then answer.pop(value) 
 # problem is that the output order is wrong
 # mitigate by creating initial [0]*len list
+# tries pushing only index
 
 
 def dailyTemperatures(temperatures):
-    # stores in [temp, i]
+    # stores in [i]
     stack = []
 
     # make filled list with 0
     answer = [0] * len(temperatures) 
 
-    for i, temp in enumerate(temperatures):
-
-        # while temperature is higher then rightmost temp in stack, and if stack not empty
-        while stack != [] and temp > stack[len(stack) - 1][0]:
-            # pop and store values
-            checkTemp, checkIndex = stack.pop(len(stack) - 1)
+    for index in range(len(temperatures)):
+        # while temperature is higher then last temp in stack, and if stack not empty
+        while stack != [] and temperatures[index] > temperatures[stack[-1]]:
+            # pop and store value of index
+            checkIndex = stack.pop(-1)
             # insert difference in days to answer
-            answer[checkIndex] = (i - checkIndex)
+            answer[checkIndex] = (index - checkIndex)
 
-        # append current temp and index to stack
-        stack.append([temp, i])    
+        # append current index to stack
+        stack.append(index)    
 
     return answer
        
