@@ -1,8 +1,4 @@
-a = [[3,1], [1, 2], [2,4], [1,3]]
+a = ['A', ' ', 'm', 'a', 'n', ',', ' ', 'a', ' ', 'p', 'l', 'a', 'n', ',', ' ', 'a', ' ', 'c', 'a', 'n', 'a', 'l', ':', ' ', 'P', 'a', 'n', 'a', 'm', 'a']
 
-print(len(apply))
+print(a[1].isalpha())
 
-for i in reversed(range(len(a))):
-    print(i)
-
-print(sorted(a))

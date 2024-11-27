@@ -36,6 +36,8 @@ def carFleet(target, position, speed):
 
 print(carFleet(target, position, speed))
 
+# might use zip next time
+
 
 
 
