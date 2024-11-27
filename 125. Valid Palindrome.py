@@ -7,16 +7,13 @@ def isPalindrome(s):
     # immediately return true because 1 value in string is always palindrome
     if len(s) == 1:
         return True
-    
-    # alphabet set 
-    alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
 
     # word list
     word = []
 
     # remove symbols and empty spaces from given string
     for str in s:
-        if str.lower() in alphabet:
+        if str.isalnum() == True:
             word.append(str.lower())
     print(word)
 
