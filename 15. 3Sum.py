@@ -5,17 +5,14 @@
 # try sorting and skipping same numbers for i first then j, then k
 
 
-nums = [-1,0,1,2,-1,-4,-1]
+nums = [0,0,0]
 
 def threeSum(nums):
     # sort the nums for easier skip later
     nums = sorted(nums)
-    print(sorted(nums))
 
-    # initial location of pointers
+    # initial location of pointer
     i = 0
-    j = 1
-    k = 2
 
     # stores output in list
     output = []
@@ -24,28 +21,40 @@ def threeSum(nums):
     for i in range(0, len(nums) - 2):
         # skip the number if it was previously tested as i
         if i > 0 and nums[i] == nums[i - 1]:
-            print(nums[i], nums[i-1], 'i')
             continue
+        
+        # j and k will be a left and right two pointers
+        j = i + 1
+        k = len(nums) - 1
 
-        for j in range(i + 1, len(nums) - 1):
-            # skip the number if it was previously tested as j
-            if j > (i + 1) and nums[j] == nums[j - 1]:
-                print(nums[j], nums[j-1], 'j')
-                continue
+        while j < k:
+            currentSum = nums[i] + nums[j] + nums[k]
 
-            for k in range((j + 1), len(nums)):
-                # skip the number if it was previously tested as k
-                if k > (j + 1) and nums[k] == nums[k - 1]:
-                    print(nums[k], nums[k-1], 'k')
-                    continue
-                print(i, j, k)
-                currentSum = nums[i] + nums[j] + nums[k]
+            if currentSum > 0:
+                k -= 1
 
-                if currentSum == 0:
-                    check = sorted((nums[i], nums[j], nums[k]))
-                    if check not in output:
-                        output.append(check)
-                
+                # keep moving k if the number have already been evaluated
+                while nums[k] == nums[k + 1] and j < k:
+                    k -= 1
+            
+            elif currentSum < 0:
+                j += 1
+                print(j)
+                # keep moving k if the number have already been evaluated
+                while nums[j] == nums[j - 1] and j < k:
+                    j += 1
+            
+            else:
+                # append values that results to 0
+                output.append(sorted([nums[i], nums[j], nums[k]]))
+
+                # finish evaluation by moving j 
+                j += 1
+
+                # keep moving k if the number have already been evaluated
+                while j > (i + 1) and nums[j] == nums[j - 1] and j < k:
+                    j += 1
+
     return output
 
 print(threeSum(nums))
