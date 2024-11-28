@@ -15,22 +15,17 @@ def isPalindrome(s):
     for str in s:
         if str.isalnum() == True:
             word.append(str.lower())
-    print(word)
 
     # using left and right pointer to traverse the given string
     left = 0
     right = len(word) -1
-
-    # stopper for pointers
-    difference = right - left
     
     # loop using pointers for the word
-    while difference > 0:
+    while left < right:
         if word[left] != word[right]:
             return False
         left += 1
         right -= 1
-        difference = right - left
 
     return True
    
