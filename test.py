@@ -4,7 +4,12 @@
 # a.add((2,3,4)) 
 # print(a)
 
-a = [1, 2, 3, 4]
+a = [1, 2, 3, 4, 1]
 
-for i in range(len(a) -2):
-    print(i)
+b = a.pop(2)
+print(b)
+
+a.insert(2, b)
+print(a)
+# for i in range(len(a) -2):
+#     print(i)

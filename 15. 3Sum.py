@@ -8,25 +8,34 @@ nums = [-1,0,1,2,-1,-4]
 
 def threeSum(nums):
     # initial location of pointers
-    i = 0
-    j = 1
-    k = 2
+    left = 0
+    right = len(nums) - 1
 
     # stores output in list
     output = []
 
-    # traverse through the nums list as three pointers
-    for i in range(0, len(nums) - 2):
-        for j in range(i + 1, len(nums) - 1):
-            for k in range((j + 1), len(nums)):
-                print(i, j, k)
-                currentSum = nums[i] + nums[j] + nums[k]
+    # traverse nums as two pointers
+    for left in range(0, len(nums) - 1):
+        for right in range(left + 1, len(nums)):
 
-                if currentSum == 0:
-                    check = sorted((nums[i], nums[j], nums[k]))
-                    if check not in output:
-                        output.append(check)
-                
+            # find in nums for final value to result sum 0. pop to ensure we do not check for same index.
+            leftValue = nums.pop(left)
+            rightValue = nums.pop(right - 1)
+
+            # last value = 0 - i - j
+            find = - leftValue - rightValue
+
+            if find in nums:
+                # for checking if it already exist in output
+                check = sorted([leftValue, rightValue, find])
+
+                if check not in output:
+                    output.append(check)
+
+            # insert values back to nums
+            nums.insert(left, leftValue)
+            nums.insert(right, rightValue)
+
     return output
 
 print(threeSum(nums))
