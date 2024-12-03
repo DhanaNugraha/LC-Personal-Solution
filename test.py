@@ -29,7 +29,3 @@ for i in a:
     print(total)
 
 
-left, right = 0 , len(nums) - 1
-    
-    if nums[left] < nums[right]:
-        return nums[left]
