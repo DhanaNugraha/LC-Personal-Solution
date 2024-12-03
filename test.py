@@ -14,7 +14,22 @@
 # for i in range(len(a) -2):
 #     print(i)
 
-matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
+# matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
 
-for i in reversed(range(len(matrix))):
-    print(matrix[i][0])
+# for i in reversed(range(len(matrix))):
+#     print(matrix[i][0])
+
+
+a = [3,6,7,11]
+h = 8
+kPerPile = h / len(a)
+total = 0
+for i in a:
+    total = i / kPerPile
+    print(total)
+
+
+left, right = 0 , len(nums) - 1
+    
+    if nums[left] < nums[right]:
+        return nums[left]
