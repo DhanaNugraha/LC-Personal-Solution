@@ -20,12 +20,18 @@
 #     print(matrix[i][0])
 
 
-a = [3,6,7,11]
-h = 8
-kPerPile = h / len(a)
-total = 0
-for i in a:
-    total = i / kPerPile
-    print(total)
+# a = [3,6,7,11]
+# h = 8
+# kPerPile = h / len(a)
+# total = 0
+# for i in a:
+#     total = i / kPerPile
+#     print(total)
+
+a = 'hello'
+b = ''
+for i in reversed(range(len(a))):
+    b += a[i]
+    print(b)
 
 
