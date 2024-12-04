@@ -1,18 +1,18 @@
 prices = [7,1,5,3,6,4]
 
 def maxProfit(prices):
-    left, right = 0, 0 
+    left, right = 0, 1
     output = 0
 
     while right < len(prices):
-        profit = prices[right] - prices[left]
-        output = max(profit, output)
-
-        if profit >= 0:
-            right += 1
+        if prices[right] > prices[left]:
+            profit = prices[right] - prices[left]
+            output = max(profit, output)
 
         else:
-            left += 1
+            left = right
+
+        right += 1
     
     return output
     
