@@ -1,4 +1,4 @@
-head = {'val': 2, 'next': ListNode{'val': 3, next: ListNode{'val': 4, 'next': ListNode{'val': 5, 'next': None}}}}
+head = None
 
 # i cant make a linked list yet for input
 
@@ -19,6 +19,3 @@ def reverseList(head):
 
     return previousNode
 
-
-
-prin
