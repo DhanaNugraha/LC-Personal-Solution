@@ -33,9 +33,12 @@
 # for i in reversed(range(len(a))):
 #     b += a[i]
 #     print(b)
-a = 2
-b = a
-a = 3
-print(a, b)
+# a = 2
+# b = a
+# a = 3
+# print(a, b)
 
+a = [1,2,3]
+
+print(a.pop())
 
