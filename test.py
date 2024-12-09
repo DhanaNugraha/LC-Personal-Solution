@@ -28,10 +28,14 @@
 #     total = i / kPerPile
 #     print(total)
 
-a = 'hello'
-b = ''
-for i in reversed(range(len(a))):
-    b += a[i]
-    print(b)
+# a = 'hello'
+# b = ''
+# for i in reversed(range(len(a))):
+#     b += a[i]
+#     print(b)
+a = 2
+b = a
+a = 3
+print(a, b)
 
 
