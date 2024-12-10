@@ -12,22 +12,22 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        
-        if not root:
-            return 0
-        
-        leftRoot = root.left
-        rightRoot = root.right
+        self.output = 0
 
-        def maxLeft(leftSide):
-            if not leftSide:
-                return 0
-            return 1 + max(maxLeft(leftSide.left), maxLeft(leftSide.right))
         
-        def maxRight(rightSide):
-            if not rightSide:
+        def dfs(current):
+            if not current:
                 return 0
-            return 1 + max(maxLeft(rightSide.left), maxLeft(rightSide.right))
+            
+            left = dfs(current.left)
+            right = dfs(current.right)
 
-        return maxLeft(leftRoot) + maxRight(rightRoot)
+            # longest chain = longest left + longest right of a node
+            self.output = max(self.output, left + right)
+
+            # returns height to the left= and right=
+            return 1 + max(left, right)
+
+        dfs(root)
+        return self.output
 
