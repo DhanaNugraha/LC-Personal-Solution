@@ -69,7 +69,7 @@ class Solution(object):
         
         # [current node, depth]
         queue = [[root], 1]
-        outputDepth = 1
+        output = 1
 
         # loop while queue not empty
         while queue:
@@ -85,4 +85,4 @@ class Solution(object):
                 # Last In append left sub root
                 queue.append([root.left, depth + 1])
 
-        return outputDepth
+        return output
