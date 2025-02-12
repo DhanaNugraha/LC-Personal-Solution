@@ -1,29 +1,22 @@
+import heapq
 class KthLargest(object):
 
     def __init__(self, k, nums):
-        """
-        :type k: int
-        :type nums: List[int]
-        """
-        print(k, nums)
         # make k and nums to be available in other functions in the class by making it self.
         self.k = k
         self.nums = nums
+        # https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+        heapq.heapify(self.nums)
+        while len(self.nums) > self.k:
+            heapq.heappop(self.nums)
         
 
     def add(self, val):
-        """
-        :type val: int
-        :rtype: int
-        """
-        # append and sort in reverse
-        self.nums.append(val)
-        self.nums.sort(reverse = True)
-        # print(val)
-        # print(self.nums)
-        
-        # return kth largest value
-        return self.nums[self.k - 1]
+        heapq.heappush(self.nums, val)
+        # edge case just in case the length of nums is greater than k
+        if len(self.nums) > self.k:
+            heapq.heappop(self.nums)
+        return self.nums[0]
 
         
 
