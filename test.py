@@ -1,17 +1,39 @@
-def insertionSort(arr):
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and key < arr[j]:
-            print("1",arr)
-            arr[j + 1] = arr[j]
-            print("2",arr)
-            j -= 1
-        # disini j udh -1
-        arr[j + 1] = key
-        print("3",arr)
-    return arr
+# stamina = 200
+
+# def runLap(stamina, lapsRemaining = 5):
+#     if lapsRemaining == 0:
+#         return print("you have",stamina, "stamina left")
+#     else:
+#         print("here")
+#         print(stamina)
+#         return runLap(stamina - 10, lapsRemaining - 1)
+    
+# print(runLap(stamina))
+
+# word = "Hello"
+
+# def reverse(word):
+#     if len(word) <= 1:
+#         return word
+#     slicedWord = word[:1]
+#     slicedLetter = word[0]
+#     print(slicedWord, slicedLetter)
+#     return reverse(slicedWord + slicedLetter)
+
+# print(reverse(word))
 
 
-arr = [12, 11, 13, 5, 6]
-print(insertionSort(arr))
+number = [1,2,3,4,5]
+target = 3
+
+# def sumOfDigits(number):
+#     if len(number) == 0:
+#         return -1
+#     currNum = number.pop(0)
+#     if currNum == target:
+#         return 1
+#     elif 
+#     return 1 + sumOfDigits(number)
+
+# print(sumOfDigits(number))
+
